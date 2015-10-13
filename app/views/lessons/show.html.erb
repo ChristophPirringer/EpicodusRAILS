@@ -1,0 +1,9 @@
+<% content_for(:navbar) do %>
+  <li><%= link_to 'Next Lesson', section_lesson_path(@section, @lesson.next) %></li>
+  <li><%= link_to 'Previous Lesson', section_lesson_path(@section, @lesson.previous) %></li>
+<% end %>
+
+<h1><%= @lesson.name %></h1>
+<p><%= @lesson.lesson_content %></p>
+
+<p><%= link_to 'Back to Section', section_path(@section) %></p>w

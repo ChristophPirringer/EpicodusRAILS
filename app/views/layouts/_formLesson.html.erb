@@ -1,0 +1,7 @@
+<%= form_for [@section, @lesson] do |lesson| %>
+  <%= lesson.label :name %>
+  <%= lesson.text_field :name %>
+  <%= lesson.label :lesson_content %>
+  <%= lesson.text_field :lesson_content %>
+  <%= lesson.submit  %>
+<% end %>
