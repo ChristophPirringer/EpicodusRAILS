@@ -1,11 +1,13 @@
 class SectionsController < ApplicationController
   def index
     @sections = Section.all
-    @feedback = Feedback.new
   end
 
   def show
+    # binding.pry
     @section = Section.find(params[:id])
+    @feedback = Feedback.new()
+
   end
 
 

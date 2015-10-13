@@ -24,3 +24,22 @@
                          :data => {:confirm => "You sure?",
                                    :method => "delete"} %></p>
 <p><%= link_to "New Lesson", new_section_lesson_path(@section) %></p>
+
+<%= form_for [@section, @feedback] do |f| %>
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+  <%= f.submit  %>
+<% end %>
+
+<% if @section.feedbacks.any? %>
+  <h4>Here are the feedbacks for this section:</h4>
+
+  <ul>
+    <% @section.feedbacks.each do |feedback| %>
+      <li>
+        <%= feedback.content%> |
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no feedbacksssss yet!</p>
+<% end %>
